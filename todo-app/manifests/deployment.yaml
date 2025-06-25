@@ -15,3 +15,6 @@ spec:
       containers:
         - name: todo-app
           image: jobatabs/todo-app
+          env:
+          - name: PORT
+            value: "8080"
