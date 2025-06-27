@@ -17,4 +17,4 @@ spec:
           image: jobatabs/todo-app
           env:
           - name: PORT
-            value: "8080"
+            value: "3000"
