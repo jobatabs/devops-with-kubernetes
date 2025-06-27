@@ -14,7 +14,8 @@ spec:
     spec:
       volumes:
         - name: shared-file
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: logs-claim
       containers:
         - name: log-output
           image: jobatabs/log-output

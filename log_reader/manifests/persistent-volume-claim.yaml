@@ -1,0 +1,13 @@
+# PV defined in ../../cluster-management/persistent-volume.yaml
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: logs-claim # name of the volume claim, this will be used in the deployment
+spec:
+  storageClassName: node-local # this is the name of the persistent volume we are claiming
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
