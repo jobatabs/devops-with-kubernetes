@@ -5,7 +5,8 @@ def main() -> None:
     while True:
         now = datetime.now(timezone.utc)
         now = now.strftime('%Y-%m-%dT%H:%M:%S.%fZ: ' + str(uuid.uuid4()))
-        print(now)
+        with open("/app/share/file.txt", "w", encoding="utf-8") as f:
+            f.write(now)
         time.sleep(5)
 
 if __name__ == "__main__":

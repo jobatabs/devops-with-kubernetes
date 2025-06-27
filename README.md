@@ -9,3 +9,4 @@
 - [1.5.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.5/todo-app/manifests/deployment.yaml)
 - [1.6.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.6/todo-app/manifests/service.yaml)
 - [1.8.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.8/todo-app/manifests/)
+- [1.10.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.10/log_reader/manifests/)

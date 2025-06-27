@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logs
+  template:
+    metadata:
+      labels:
+        app: logs
+    spec:
+      volumes:
+        - name: shared-file
+          emptyDir: {}
+      containers:
+        - name: log-output
+          image: jobatabs/log-output
+          volumeMounts:
+          - name: shared-file
+            mountPath: /app/share
+        - name: log-reader
+          image: jobatabs/log-reader
+          volumeMounts:
+          - name: shared-file
+            mountPath: /app/share
+          env:
+          - name: PORT
+            value: "8000"
