@@ -10,5 +10,6 @@
 - [1.6.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.6/todo-app/manifests/service.yaml)
 - [1.7.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.7/log_output/manifests/ingress.yaml)
 - [1.8.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.8/todo-app/manifests/)
+- [1.9.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.9/pingpong/manifests/shared-ingress.yaml)
 - [1.10.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.10/log_reader/manifests/)
 - [1.11.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.11/log_reader/manifests/)
