@@ -13,3 +13,4 @@
 - [1.9.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.9/pingpong/manifests/shared-ingress.yaml)
 - [1.10.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.10/log_reader/manifests/)
 - [1.11.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.11/log_reader/manifests/)
+- [1.12.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.12/todo-app/)

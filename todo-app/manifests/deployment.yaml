@@ -11,8 +11,9 @@ spec:
     metadata:
       labels:
         app: todo-app
-    
     spec:
+      securityContext:
+        fsGroup: 1000
       volumes:
         - name: todo-image
           persistentVolumeClaim:
@@ -21,7 +22,7 @@ spec:
         - name: todo-app
           image: jobatabs/todo-app
           volumeMounts:
-          - name: todo-app-claim
+          - name: todo-image
             mountPath: /app/static
           env:
           - name: PORT
