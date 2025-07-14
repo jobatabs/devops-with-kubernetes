@@ -1,7 +1,17 @@
-FROM python:3.14-rc-alpine3.21
+FROM python:alpine
 
 WORKDIR /app
 
-COPY app.py .
+RUN pip install poetry && addgroup app && adduser -S -G app app
 
-ENTRYPOINT [ "python3", "app.py" ]
+COPY . .
+
+RUN chown -R app:app .
+
+USER app
+
+RUN poetry install --no-root
+
+ENV PORT=5000
+
+ENTRYPOINT [ "poetry", "run", "gunicorn", "app:app" ]
