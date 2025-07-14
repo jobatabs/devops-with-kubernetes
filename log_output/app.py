@@ -1,13 +1,16 @@
-import time, uuid
+import uuid
 from datetime import datetime, timezone
+from os import getenv
+from flask import Flask, render_template
 
-def main() -> None:
-    while True:
-        now = datetime.now(timezone.utc)
-        now = now.strftime('%Y-%m-%dT%H:%M:%S.%fZ: ' + str(uuid.uuid4()))
-        with open("/app/share/file.txt", "w", encoding="utf-8") as f:
-            f.write(now)
-        time.sleep(5)
+app = Flask(__name__)
+app.secret_key = getenv("SECRET_KEY")
+app.config["PORT"] = getenv("PORT")
+app.config["UUID"] = str(uuid.uuid4())
 
-if __name__ == "__main__":
-    main()
+@app.route("/")
+def index():
+    now = datetime.now(timezone.utc)
+    now = now.strftime('%Y-%m-%dT%H:%M:%S.%fZ: ' + app.config["UUID"])
+    print(now)
+    return render_template("index.html", output=now)
