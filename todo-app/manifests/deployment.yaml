@@ -11,10 +11,18 @@ spec:
     metadata:
       labels:
         app: todo-app
+    
     spec:
+      volumes:
+        - name: todo-image
+          persistentVolumeClaim:
+            claimName: todo-app-claim
       containers:
         - name: todo-app
           image: jobatabs/todo-app
+          volumeMounts:
+          - name: todo-app-claim
+            mountPath: /app/static
           env:
           - name: PORT
             value: "3000"
