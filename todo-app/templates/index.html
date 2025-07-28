@@ -2,5 +2,16 @@
 {% block title %}front page{% endblock %}
 {% block content %}
 		<p>Hello, world!</p>
-		<img src='{{ image }}'></img>
+		<img src='{{ image }}' width="300"></img>
+		<br /><br />
+		<form action="/create">
+			<label for="todo">Todo: </label>
+			<input type="text" id="todo">
+			<input type="submit" value="Create todo">
+		</form>
+		<ul>
+			<li>Learn Kubernetes</li>
+			<li>Learn JavaScript</li>
+			<li>Build modern SPA</li>
+		</ul>
 {% endblock %}
