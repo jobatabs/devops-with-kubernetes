@@ -12,6 +12,12 @@ def pong():
     response.mimetype = "text/plain"
     return response
 
+@app.route("/pings")
+def pings():
+    response = make_response(str(app.config["PONG"]), 200)
+    response.mimetype = "text/plain"
+    return response
+
 def make_pong():
     answer = f"pong {app.config['PONG']}"
     app.config["PONG"] += 1
