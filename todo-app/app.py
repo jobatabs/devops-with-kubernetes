@@ -21,8 +21,8 @@ with safe_open_w(app.config["IMGPATH"]) as file:
     file.write(r.content)
 
 test_env = getenv("TEST_ENV") == "true"
-app.logger.info(f"Test environment: {test_env}")
-app.logger.info(f"Server running on port {app.config['PORT']}")
+app.logger.info("Test environment: %s", test_env)
+app.logger.info("Server running on port %s", app.config['PORT'])
 
 @app.route("/")
 def index():
@@ -32,4 +32,5 @@ def index():
             new_file = requests.get("https://picsum.photos/1200", timeout=10)
             f.write(new_file.content)
         app.config["IMGTIME"] = datetime.now()
-    return render_template("index.html", image=app.config["IMGPATH"])
+    todos = requests.get("http://todo-backend-svc:3000/todos").json()
+    return render_template("index.html", todos=todos, image=app.config["IMGPATH"])

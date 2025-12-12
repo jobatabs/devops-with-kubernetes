@@ -4,14 +4,14 @@
 		<p>Hello, world!</p>
 		<img src='{{ image }}' width="300"></img>
 		<br /><br />
-		<form action="/create">
+		<form action="/todos" method="post">
 			<label for="todo">Todo: </label>
-			<input type="text" id="todo">
+			<input type="text" id="todo" name="todo">
 			<input type="submit" value="Create todo">
 		</form>
 		<ul>
-			<li>Learn Kubernetes</li>
-			<li>Learn JavaScript</li>
-			<li>Build modern SPA</li>
+			{% for todo in todos %}
+				<li>{{ todo }}</li>
+			{% endfor %}
 		</ul>
 {% endblock %}

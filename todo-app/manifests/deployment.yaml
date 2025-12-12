@@ -26,4 +26,4 @@ spec:
             mountPath: /app/static
           env:
           - name: PORT
-            value: "3000"
+            value: "5000"
