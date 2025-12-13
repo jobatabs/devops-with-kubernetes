@@ -16,3 +16,20 @@ spec:
       containers:
         - name: log-output
           image: jobatabs/log-output
+          env:
+            - name: MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: log-output-config
+                  key: message
+          volumeMounts:
+            - name: config
+              mountPath: "/config"
+              readOnly: true
+      volumes:
+        - name: config
+          configMap:
+            name: log-output-config
+            items:
+              - key: "information.txt"
+                path: "information.txt"
