@@ -17,3 +17,5 @@
 - [1.13.](https://github.com/jobatabs/devops-with-kubernetes/tree/1.13/todo-app/)
 - [2.1.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.1/)
 - [2.2.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.2/)
+- [2.3.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.3/log_output/manifests)
+- [2.4.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.4/todo-app/manifests/)
