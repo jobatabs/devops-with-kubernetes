@@ -16,6 +16,6 @@ spec:
       containers:
         - name: todo-backend
           image: jobatabs/todo-backend
-          env:
-          - name: PORT
-            value: "3000"
+          envFrom:
+            - configMapRef:
+                name: todo-backend-config

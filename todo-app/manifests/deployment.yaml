@@ -25,6 +25,6 @@ spec:
           volumeMounts:
           - name: todo-image
             mountPath: /app/static
-          env:
-          - name: PORT
-            value: "5000"
+          envFrom:
+            - configMapRef:
+                name: todo-app-config

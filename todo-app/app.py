@@ -3,10 +3,7 @@ from datetime import datetime, timedelta
 from os import getenv
 import requests
 from flask import Flask, render_template
-from dotenv import load_dotenv
 from util import safe_open_w
-
-load_dotenv()
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -14,7 +11,7 @@ logger.setLevel(logging.INFO)
 app = Flask(__name__)
 app.secret_key = getenv("SECRET_KEY")
 app.config["PORT"] = getenv("PORT")
-app.config["IMGPATH"] = "static/img.jpg"
+app.config["IMGPATH"] = getenv("IMGPATH")
 app.config["IMGTIME"] = datetime.now()
 with safe_open_w(app.config["IMGPATH"]) as file:
     r = requests.get("https://picsum.photos/1200", timeout=10)

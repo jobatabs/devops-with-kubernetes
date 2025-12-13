@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-backend-config
+  namespace: project
+  labels:
+    app: todo-backend
+data:
+  PORT: "3000"
