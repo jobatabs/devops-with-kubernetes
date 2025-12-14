@@ -16,3 +16,6 @@ spec:
       containers:
         - name: pingpong
           image: jobatabs/pingpong
+          envFrom:
+            - configMapRef:
+                name: pingpong-config

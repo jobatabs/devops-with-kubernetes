@@ -1,0 +1,2 @@
+CREATE TABLE PINGS (id SERIAL PRIMARY KEY, count INTEGER);
+INSERT INTO pings (id, count) VALUES (1, 0);
