@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: random-wikipedia-article
+  namespace: project
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: random-wikipedia-article
+            image: jobatabs/random-wikipedia-article
+          restartPolicy: OnFailure
