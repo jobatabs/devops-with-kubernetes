@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: postgres-stset
-  namespace: exercises
+  namespace: project
 spec:
   serviceName: postgres-svc
   replicas: 1
@@ -24,8 +24,8 @@ spec:
               - name: postgres-data-storage
                 mountPath: /var/lib/postgresql
             envFrom:
-              - configMapRef:
-                  name: postgres-config
+              - secretRef:
+                  name: postgres-secret
   volumeClaimTemplates:
       - metadata:
           name: postgres-data-storage
@@ -49,10 +49,3 @@ spec:
   clusterIP: None
   selector:
     app: postgres
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: postgres-config
-data:
-  POSTGRES_PASSWORD: postgres

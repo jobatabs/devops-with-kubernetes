@@ -19,3 +19,5 @@ spec:
           envFrom:
             - configMapRef:
                 name: todo-backend-config
+            - secretRef:
+                name: postgres-secret
