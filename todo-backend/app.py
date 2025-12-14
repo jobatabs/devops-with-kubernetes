@@ -33,6 +33,9 @@ def todos_get():
 @app.route("/todos", methods=["POST"])
 def todos_post():
     name = request.form["todo"]
+    if len(name) > 140:
+        app.logger.info("Entry too long, not accepted: %s...", name[0:140])
+        return redirect("/", 400)
     app.logger.info("POST request received: %s", name)
     sql = text("INSERT INTO todos (name) VALUES (:name) RETURNING name;")
     app.logger.info("SQL statement formed: %s", str(sql))
