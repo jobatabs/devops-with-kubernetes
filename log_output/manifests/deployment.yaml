@@ -26,6 +26,12 @@ spec:
             - name: config
               mountPath: "/config"
               readOnly: true
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            httpGet:
+              path: /
+              port: 5000
       volumes:
         - name: config
           configMap:

@@ -19,3 +19,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: pingpong-config
+          readinessProbe:
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            httpGet:
+              path: /
+              port: 3000
