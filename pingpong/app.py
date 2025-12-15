@@ -17,12 +17,6 @@ with app.app_context():
         app.config["PONG"] = int(result)
 
 @app.route("/")
-def index():
-    response = make_response("OK", 200)
-    response.mimetype = "text/plain"
-    return response
-
-@app.route("/pingpong")
 def pong():
     response = make_response(make_pong(), 200)
     response.mimetype = "text/plain"
