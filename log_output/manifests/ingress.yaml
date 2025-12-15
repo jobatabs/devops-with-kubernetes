@@ -13,18 +13,18 @@ spec:
           service:
             name: log-output-svc
             port:
-              number: 5000
+              number: 80
       - path: /pingpong
         pathType: Prefix
         backend:
           service:
             name: pingpong-backend-svc
             port:
-              number: 3000
+              number: 80
       - path: /pings
         pathType: Prefix
         backend:
           service:
             name: pingpong-backend-svc
             port:
-              number: 3000
+              number: 80

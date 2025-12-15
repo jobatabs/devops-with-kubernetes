@@ -14,7 +14,7 @@ app.config["MESSAGE"] = getenv("MESSAGE")
 def index():
     now = datetime.now(timezone.utc)
     now = now.strftime('%Y-%m-%dT%H:%M:%S.%fZ: ' + app.config["UUID"])
-    ping = requests.get("http://pingpong-backend-svc:3000/pings").content.decode()
+    ping = requests.get("http://pingpong-backend-svc/pings").content.decode()
     print(now)
     with open("/config/information.txt", encoding="UTF-8") as f:
         file = f.readline()
