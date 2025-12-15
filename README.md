@@ -30,3 +30,4 @@
 - [3.3.](https://github.com/jobatabs/devops-with-kubernetes/tree/3.3/log_output/manifests)
 - [3.4.](https://github.com/jobatabs/devops-with-kubernetes/tree/3.4/pingpong/manifests)
 - [4.1.](https://github.com/jobatabs/devops-with-kubernetes/tree/4.1/pingpong/manifests)
+- [4.3.](https://github.com/jobatabs/devops-with-kubernetes/tree/4.3/cluster-management/query.promql)
