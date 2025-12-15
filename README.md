@@ -25,3 +25,4 @@
 - [2.8.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.8/todo-backend/manifests/)
 - [2.9.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.9/random-wikipedia-article/)
 - [2.10.](https://github.com/jobatabs/devops-with-kubernetes/tree/2.10/todo-backend/app.py)
+- [3.1.](https://github.com/jobatabs/devops-with-kubernetes/tree/3.1/pingpong/manifests)
